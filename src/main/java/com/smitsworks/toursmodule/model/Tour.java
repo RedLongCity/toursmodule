@@ -1,5 +1,7 @@
 package com.smitsworks.toursmodule.model;
 
+import org.springframework.data.annotation.Id;
+
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Map;
@@ -35,6 +37,7 @@ public class Tour {
      * hotel_facilities : [{"id":"1","name":"Wi-fi","category_id":"1","category":"Интернет","is_main":0,"is_paid":0}]
      */
 
+    @Id
     private String key;
     private int type;
     private String country;
