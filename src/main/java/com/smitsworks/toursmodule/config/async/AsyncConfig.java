@@ -13,20 +13,20 @@ public class AsyncConfig {
 
     @Bean(name = "mainExecutor", destroyMethod = "shutdown")
     public AsyncListenableTaskExecutor getAsyncExecutor(
-            @Value("${v24.executor.corePoolSize:3}") int corePoolSize,
-            @Value("${v24.executor.maxPoolSize:30}") int maxPoolSize,
-            @Value("${v24.executor.queueCapacity:250}") int queueCapacity,
-            @Value("${v24.executor.threadNamePrefix:apiConsumerThread-}") String prefix) {
+            @Value("${executor.corePoolSize:3}") int corePoolSize,
+            @Value("${executor.maxPoolSize:30}") int maxPoolSize,
+            @Value("${executor.queueCapacity:250}") int queueCapacity,
+            @Value("${executor.threadNamePrefix:apiConsumerThread-}") String prefix) {
 
         return newTaskExecutor(corePoolSize, maxPoolSize, queueCapacity, prefix);
     }
 
     @Bean(name = "consumerMainExecutor", destroyMethod = "shutdown")
     public AsyncListenableTaskExecutor consumerMainExecutor(
-            @Value("${v24.consumerMainExecutor.corePoolSizeя:3}") int corePoolSize,
-            @Value("${v24.consumerMainExecutor.maxPoolSize:30}") int maxPoolSize,
-            @Value("${v24.consumerMainExecutor.queueCapacity:250}") int queueCapacity,
-            @Value("${v24.consumerMainExecutor.threadNamePrefix:apiConsumerThread-}") String prefix) {
+            @Value("${consumerMainExecutor.corePoolSizeя:3}") int corePoolSize,
+            @Value("${consumerMainExecutor.maxPoolSize:30}") int maxPoolSize,
+            @Value("${consumerMainExecutor.queueCapacity:250}") int queueCapacity,
+            @Value("${consumerMainExecutor.threadNamePrefix:apiConsumerThread-}") String prefix) {
 
         return newTaskExecutor(corePoolSize, maxPoolSize, queueCapacity, prefix);
     }
