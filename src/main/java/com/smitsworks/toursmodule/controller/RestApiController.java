@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api_old")
 public class RestApiController {
 
     private static final Logger log = LogManager.getLogger();

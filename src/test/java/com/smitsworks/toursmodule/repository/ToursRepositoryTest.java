@@ -2,6 +2,7 @@ package com.smitsworks.toursmodule.repository;
 
 import com.smitsworks.toursmodule.model.Tour;
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +17,7 @@ public class ToursRepositoryTest {
     private TourRepository tourRepository;
 
     @Test
+    @Ignore
     public void saveTest() {
         String testId = "test_key";
         Tour tour = new Tour();
