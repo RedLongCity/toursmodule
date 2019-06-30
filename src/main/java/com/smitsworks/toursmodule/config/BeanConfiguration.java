@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.http.client.SimpleClientHttpRequestFactory;
 import org.springframework.web.client.RestTemplate;
 
@@ -13,6 +14,7 @@ import static java.util.concurrent.TimeUnit.SECONDS;
 
 @Configuration
 @ComponentScan(basePackages = "com.smitsworks.toursmodule")
+@PropertySource("classpath:application.properties")
 public class BeanConfiguration {
 
     private static final Logger log = LogManager.getLogger();
