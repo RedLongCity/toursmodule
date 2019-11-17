@@ -1,6 +1,10 @@
 package com.smitsworks.toursmodule.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.google.gson.annotations.SerializedName;
+
 import java.util.List;
+import java.util.Objects;
 
 public class ToursListResponse {
 
@@ -46,6 +50,22 @@ public class ToursListResponse {
 
     public void setOffers(List<OffersBean> offers) {
         this.offers = offers;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ToursListResponse that = (ToursListResponse) o;
+        return page == that.page &&
+                items_per_page == that.items_per_page &&
+                has_more_pages == that.has_more_pages &&
+                Objects.equals(offers, that.offers);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(page, items_per_page, has_more_pages, offers);
     }
 
     public static class OffersBean {
@@ -323,6 +343,45 @@ public class ToursListResponse {
             this.hotel_facilities = hotel_facilities;
         }
 
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (o == null || getClass() != o.getClass()) return false;
+            OffersBean that = (OffersBean) o;
+            return type == that.type &&
+                    region_id == that.region_id &&
+                    hotel_id == that.hotel_id &&
+                    adult_amount == that.adult_amount &&
+                    child_amount == that.child_amount &&
+                    duration == that.duration &&
+                    is_combined == that.is_combined &&
+                    currency_id == that.currency_id &&
+                    operator_id == that.operator_id &&
+                    hotel_review_count == that.hotel_review_count &&
+                    Objects.equals(key, that.key) &&
+                    Objects.equals(country, that.country) &&
+                    Objects.equals(region, that.region) &&
+                    Objects.equals(hotel, that.hotel) &&
+                    Objects.equals(hotel_rating, that.hotel_rating) &&
+                    Objects.equals(meal_type, that.meal_type) &&
+                    Objects.equals(meal_type_full, that.meal_type_full) &&
+                    Objects.equals(accomodation, that.accomodation) &&
+                    Objects.equals(room_type, that.room_type) &&
+                    Objects.equals(date_from, that.date_from) &&
+                    Objects.equals(prices, that.prices) &&
+                    Objects.equals(from_city, that.from_city) &&
+                    Objects.equals(transport_type, that.transport_type) &&
+                    Objects.equals(operator, that.operator) &&
+                    Objects.equals(hotel_review_rate, that.hotel_review_rate) &&
+                    Objects.equals(hotel_images, that.hotel_images) &&
+                    Objects.equals(hotel_facilities, that.hotel_facilities);
+        }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(key, type, country, region_id, region, hotel_id, hotel, hotel_rating, meal_type, meal_type_full, adult_amount, child_amount, accomodation, room_type, duration, date_from, is_combined, currency_id, prices, from_city, transport_type, operator_id, operator, hotel_review_rate, hotel_review_count, hotel_images, hotel_facilities);
+        }
+
         public static class PricesBean {
             /**
              * 1 : 483
@@ -330,35 +389,50 @@ public class ToursListResponse {
              * 10 : 434
              */
 
-            @com.google.gson.annotations.SerializedName("1")
-            private int _$1;
-            @com.google.gson.annotations.SerializedName("2")
-            private int _$2;
-            @com.google.gson.annotations.SerializedName("10")
-            private int _$10;
+            @JsonProperty("1")
+            private int priceUS;
+            @JsonProperty("2")
+            private int priceUA;
+            @JsonProperty("10")
+            private int priceEU;
 
-            public int get_$1() {
-                return _$1;
+            public int getPriceUS() {
+                return priceUS;
             }
 
-            public void set_$1(int _$1) {
-                this._$1 = _$1;
+            public void setPriceUS(int priceUS) {
+                this.priceUS = priceUS;
             }
 
-            public int get_$2() {
-                return _$2;
+            public int getPriceEU() {
+                return priceEU;
             }
 
-            public void set_$2(int _$2) {
-                this._$2 = _$2;
+            public void setPriceEU(int priceEU) {
+                this.priceEU = priceEU;
             }
 
-            public int get_$10() {
-                return _$10;
+            public int getPriceUA() {
+                return priceUA;
             }
 
-            public void set_$10(int _$10) {
-                this._$10 = _$10;
+            public void setPriceUA(int priceUA) {
+                this.priceUA = priceUA;
+            }
+
+            @Override
+            public boolean equals(Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+                PricesBean that = (PricesBean) o;
+                return priceUS == that.priceUS &&
+                        priceEU == that.priceEU &&
+                        priceUA == that.priceUA;
+            }
+
+            @Override
+            public int hashCode() {
+                return Objects.hash(priceUS, priceEU, priceUA);
             }
         }
 
@@ -395,6 +469,21 @@ public class ToursListResponse {
 
             public void setIs_main(int is_main) {
                 this.is_main = is_main;
+            }
+
+            @Override
+            public boolean equals(Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+                HotelImagesBean that = (HotelImagesBean) o;
+                return is_main == that.is_main &&
+                        Objects.equals(full, that.full) &&
+                        Objects.equals(thumb, that.thumb);
+            }
+
+            @Override
+            public int hashCode() {
+                return Objects.hash(full, thumb, is_main);
             }
         }
 
@@ -461,6 +550,24 @@ public class ToursListResponse {
 
             public void setIs_paid(int is_paid) {
                 this.is_paid = is_paid;
+            }
+
+            @Override
+            public boolean equals(Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+                HotelFacilitiesBean that = (HotelFacilitiesBean) o;
+                return is_main == that.is_main &&
+                        is_paid == that.is_paid &&
+                        Objects.equals(id, that.id) &&
+                        Objects.equals(name, that.name) &&
+                        Objects.equals(category_id, that.category_id) &&
+                        Objects.equals(category, that.category);
+            }
+
+            @Override
+            public int hashCode() {
+                return Objects.hash(id, name, category_id, category, is_main, is_paid);
             }
         }
     }

@@ -8,6 +8,7 @@ import org.springframework.http.*;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.Objects;
 import java.util.Optional;
 
 @Service
@@ -36,12 +37,13 @@ public class ITTourstApiService {
                     "\n\t Possibly ip of deployed machine changed, or incorrect token");
             return Optional.empty();
         }
+        return Optional.of(Objects.requireNonNull(filtersResponseEntity.getBody()));
     }
 
     public HttpEntity getItToursHttpEntity(String lang) {
         HttpHeaders headers = new HttpHeaders();
         headers.add("Authorization", authToken);
         headers.add("Accept-Language", lang);
-        HttpEntity httpEntity = new HttpEntity(headers);
+        return new HttpEntity(headers);
     }
 }

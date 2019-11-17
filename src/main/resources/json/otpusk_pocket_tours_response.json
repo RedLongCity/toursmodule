@@ -1,0 +1,349 @@
+{
+  "lastResult": true,
+  "cnt": {
+    "id": "115",
+    "code": "turkey",
+    "name": "\u0422\u0443\u0440\u0446\u0438\u044f",
+    "nameDt": "\u0422\u0443\u0440\u0446\u0438\u0438",
+    "namePr": "\u0422\u0443\u0440\u0446\u0438\u0438",
+    "nameRd": "\u0422\u0443\u0440\u0446\u0438\u0438",
+    "nameTr": "Turkey",
+    "nameVn": "\u0422\u0443\u0440\u0446\u0438\u044e",
+    "latLng": {
+      "lat": "38.98290",
+      "lng": "35.19060",
+      "zoom": "5"
+    },
+    "cid": "tr"
+  },
+  "dept": {
+    "id": "1544",
+    "name": "\u041a\u0438\u0435\u0432",
+    "nameDt": "\u041a\u0438\u0435\u0432\u0443",
+    "namePr": "\u041a\u0438\u0435\u0432\u0435",
+    "nameRd": "\u041a\u0438\u0435\u0432\u0430",
+    "nameTr": "kiev",
+    "nameVn": "\u041a\u0438\u0435\u0432",
+    "latLng": {
+      "lat": "50.45010",
+      "lng": "30.52960",
+      "zoom": "12"
+    }
+  },
+  "total": 139,
+  "stars": {
+    "3": 11541,
+    "4": 12105,
+    "2": 12623,
+    "4+": 16829,
+    "5": 15930,
+    "5+": 19170
+  },
+  "operators": {
+    "269": 13937,
+    "1416": 11541,
+    "2": 13545,
+    "2700": 13635,
+    "594": 12983,
+    "2835": 12105,
+    "717": 12285
+  },
+  "originalStars": {
+    "3": 512.92,
+    "4": 538,
+    "2": 561,
+    "4+": 747.95,
+    "5": 708,
+    "5+": 852
+  },
+  "originalOperators": {
+    "269": 619.41,
+    "1416": 512.92,
+    "2": 602,
+    "2700": 606,
+    "594": 577,
+    "2835": 538,
+    "717": 546
+  },
+  "hotels": {
+    "1": {
+      "20178": {
+        "a": "\u041e\u0442\u0435\u043b\u044c \u043f\u043e\u0441\u0442\u0440\u043e\u0435\u043d \u0432 2000\u0433\u043e\u0434\u0443 \u0438 \u0431\u044b\u043b\u043e\u0442\u0440\u0435\u0441\u0442\u0430\u0432\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0432 2010.\u041e\u0442\u0435\u043b\u044c \u043f\u0440\u0435\u0434\u0441\u0442\u0430\u0432\u043b\u044f\u0435\u0442\u0441\u043e\u0431\u043e\u0439 \u043a\u043e\u043c\u043f\u043b\u0435\u043a\u0441 \u0438\u0437\u0434\u0432\u0443\u0445 \u0437\u0434\u0430\u043d\u0438\u0439,\u0441\u043e\u0435\u0434\u0438\u043d\u0435\u043d\u043d\u044b\u0445\u043f\u0435\u0440\u0435\u0445\u043e\u0434\u043e\u043c. \u0417\u0434\u0430\u043d\u0438\u044f\u043f\u043e\u0441\u0442\u0440\u043e\u0435\u043d\u044b \u0432\u0442\u0440\u043e\u043f\u0438\u0447\u0435\u0441\u043a\u043e\u043c \u0441\u0442\u0438\u043b\u0435.\u041e\u0444\u043e\u0440\u043c\u043b\u0435\u043d\u0438\u0435\u043e\u0441\u043d\u043e\u0432\u043d\u043e\u0433\u043e \u043a\u043e\u0440\u043f\u0443\u0441\u0430\u0432\u044b\u0434\u0435\u0440\u0436\u0430\u043d\u043e \u0432\u0441\u0440\u0435\u0434\u0438\u0437\u0435\u043c\u043d\u043e\u043c\u043e\u0440\u0441\u043a\u043e\u043c\u0441\u0442\u0438\u043b\u0435 \u0441 \u0430\u0440\u043e\u0447\u043d\u044b\u043c\u0438\u043f\u0440\u043e\u0445\u043e\u0434\u0430\u043c\u0438 \u0438\u0442\u0435\u0440\u0440\u0430\u0441\u0430\u043c\u0438,\u0432\u044b\u043b\u043e\u0436\u0435\u043d\u043d\u044b\u043c\u0438\u043f\u043b\u0438\u0442\u043a\u043e\u0439. \u041d\u0435\u0434\u0430\u043b\u0435\u043a\u043e \u043e\u0442\u043e\u0442\u0435\u043b\u044f...",
+        "c": {
+          "i": 953,
+          "c": "alanja",
+          "n": "\u0410\u043b\u0430\u043d\u0438\u044f"
+        },
+        "t": {
+          "i": 115,
+          "c": "turkey",
+          "cid": "tr",
+          "n": "\u0422\u0443\u0440\u0446\u0438\u044f"
+        },
+        "e": [
+          "aerobics",
+          "animation",
+          "billiards",
+          "cafe",
+          "chairs",
+          "childmenu",
+          "childpool",
+          "conditioning",
+          "towels",
+          "tv",
+          "umbrella",
+          "volleyball",
+          "waterslides",
+          "wifi"
+        ],
+        "h": "Sunside_Beach_Hotel",
+        "i": 20178,
+        "f": "00003239323960.jpg",
+        "fc": 8,
+        "g": {
+          "a": "36.59355",
+          "o": "31.84603"
+        },
+        "n": "Sunside Beach Hotel",
+        "r": 3.8,
+        "v": "61",
+        "s": 3,
+        "p": 11541,
+        "po": 512.92,
+        "offers": {
+          "3024821": {
+            "i": 3024821,
+            "oi": 1416,
+            "ti": 16679,
+            "o": [
+              "insurance",
+              "transfer",
+              "visa"
+            ],
+            "c": 1544,
+            "d": "2016-10-12",
+            "y": "dbl",
+            "a": "2",
+            "h": 0,
+            "ha": "",
+            "ci": 953,
+            "l": 8,
+            "f": "ai",
+            "ri": "35174",
+            "r": "Standard Room",
+            "p": 512.92,
+            "pl": 11541,
+            "u": "usd",
+            "ur": 26.85,
+            "t": "air",
+            "to": {
+              "from": [
+                {
+                  "code": "PS 5411",
+                  "craft": "Boeing 737-800",
+                  "line": "Ukraine International Airlines",
+                  "portFr": "KBP",
+                  "portTo": "AYT",
+                  "begin": "2016-10-10 04:30:00",
+                  "end": "2016-10-10 07:00:00"
+                }
+              ],
+              "to": [
+                {
+                  "code": "PS 5416",
+                  "craft": "Boeing 737-800",
+                  "line": "Ukraine International Airlines",
+                  "portFr": "AYT",
+                  "portTo": "KBP",
+                  "begin": "2016-10-13 14:05:00",
+                  "end": "2016-10-13 16:40:00"
+                }
+              ]
+            },
+            "ss": {
+              "avia": 1,
+              "aviaBack": 0,
+              "hotel": -1
+            },
+            "s": "FIX Price 7%"
+          },
+          "3024822": {
+            "i": 3024822,
+            "oi": 1416,
+            "ti": 16679,
+            "o": [
+              "insurance",
+              "transfer"
+            ],
+            "c": 1544,
+            "d": "2016-10-13",
+            "y": "dbl",
+            "a": "2",
+            "h": 0,
+            "ha": 0,
+            "ci": 953,
+            "l": 8,
+            "f": "ai",
+            "ri": "35174",
+            "r": "Standard Room",
+            "p": 512.92,
+            "pl": 11541,
+            "u": "usd",
+            "t": "air",
+            "to": {
+              "from": [
+                {
+                  "code": "PS 5411",
+                  "craft": "Boeing 737-800",
+                  "line": "Ukraine International Airlines",
+                  "portFr": "KBP",
+                  "portTo": "AYT",
+                  "begin": "2016-10-10 04:30:00",
+                  "end": "2016-10-10 07:00:00"
+                }
+              ],
+              "to": [
+                {
+                  "code": "PS 5416",
+                  "craft": "Boeing 737-800",
+                  "line": "Ukraine International Airlines",
+                  "portFr": "AYT",
+                  "portTo": "KBP",
+                  "begin": "2016-10-13 14:05:00",
+                  "end": "2016-10-13 16:40:00"
+                }
+              ]
+            },
+            "ss": {
+              "avia": 1,
+              "aviaBack": 1,
+              "hotel": 1
+            }
+          }
+        }
+      },
+      "8987": {
+        "a": "\u041e\u0442\u0435\u043b\u044c \u0440\u0430\u0441\u043f\u043e\u043b\u043e\u0436\u0435\u043d\u043d\u0430 \u043f\u043e\u0431\u0435\u0440\u0435\u0436\u044c\u0435\u0410\u043d\u0442\u0430\u043b\u0438\u0438, \u0432 300 \u043c\u0435\u0442\u0440\u0430\u0445 \u043e\u0442\u043f\u043b\u044f\u0436\u0430. \u0417\u0434\u0430\u043d\u0438\u0435 \u043e\u0442\u0435\u043b\u044f\u043f\u043e\u043a\u0440\u044b\u0442\u043e \u044f\u0440\u043a\u0438\u043c\u0438\u0446\u0432\u0435\u0442\u0430\u043c\u0438.",
+        "c": {
+          "i": 955,
+          "c": "antalija",
+          "n": "\u0410\u043d\u0442\u0430\u043b\u0438\u044f"
+        },
+        "t": {
+          "i": 115,
+          "c": "turkey",
+          "cid": "tr",
+          "n": "\u0422\u0443\u0440\u0446\u0438\u044f"
+        },
+        "e": [
+          "cafe",
+          "chairs",
+          "childpool",
+          "cleaners",
+          "conditioning",
+          "elevator",
+          "hairdryer",
+          "laundry",
+          "network",
+          "non_smoking",
+          "outdoor_pool",
+          "park",
+          "parking",
+          "pebble",
+          "phone",
+          "rent_car",
+          "restaurant",
+          "safe",
+          "shower",
+          "table_tennis",
+          "terrace",
+          "town",
+          "tv",
+          "umbrella",
+          "visa",
+          "water_sports",
+          "wifi"
+        ],
+        "h": "Benna_Hotel",
+        "i": 8987,
+        "f": "00002407240732.jpg",
+        "fc": 14,
+        "g": {
+          "a": "36.86231",
+          "o": "30.63359"
+        },
+        "n": "Benna Hotel",
+        "r": 7.2,
+        "v": "2",
+        "s": 2,
+        "p": 12690,
+        "po": 564,
+        "offers": {
+          "3025168": {
+            "i": 3025168,
+            "oi": 717,
+            "ti": 786,
+            "o": [
+              "transfer",
+              "insurance"
+            ],
+            "c": 1544,
+            "d": "2016-10-13",
+            "dt": "2016-10-20",
+            "y": "dbl",
+            "a": "2",
+            "h": "0",
+            "ha": 0,
+            "ci": 955,
+            "l": 8,
+            "f": "hb",
+            "ri": "193276",
+            "r": "Standard Room",
+            "p": 564,
+            "pl": 12690,
+            "u": "usd",
+            "t": "air",
+            "to": {
+              "from": [
+                {
+                  "code": "PS 5411",
+                  "craft": "Boeing 737-800",
+                  "line": "Ukraine International Airlines",
+                  "portFr": "KBP",
+                  "portTo": "AYT",
+                  "begin": "2016-10-10 04:30:00",
+                  "end": "2016-10-10 07:00:00"
+                }
+              ],
+              "to": [
+                {
+                  "code": "PS 5416",
+                  "craft": "Boeing 737-800",
+                  "line": "Ukraine International Airlines",
+                  "portFr": "AYT",
+                  "portTo": "KBP",
+                  "begin": "2016-10-13 14:05:00",
+                  "end": "2016-10-13 16:40:00"
+                }
+              ]
+            },
+            "ss": {
+              "hotel": 1,
+              "avia": 1,
+              "aviaBack": 1
+            }
+          }
+        }
+      }
+    }
+  },
+  "progress": {
+    "269": true,
+    "1416": true,
+    "22": true,
+    "2700": true,
+    "594": true,
+    "2835": true,
+    "717": true
+  }
+}

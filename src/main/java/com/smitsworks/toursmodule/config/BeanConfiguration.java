@@ -1,7 +1,9 @@
 package com.smitsworks.toursmodule.config;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -28,5 +30,12 @@ public class BeanConfiguration {
         factory.setConnectTimeout((int) SECONDS.toMillis(timeout));
 
         return restTemplate;
+    }
+
+    @Bean
+    @Qualifier("simple")
+    public ObjectMapper getSimpleObjectMapper() {
+        ObjectMapper objectMapper = new ObjectMapper();
+        return objectMapper;
     }
 }

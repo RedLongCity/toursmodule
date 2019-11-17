@@ -1,12 +1,11 @@
 package com.smitsworks.toursmodule.model;
 
-import com.smitsworks.toursmodule.utils.RequestPathBuilder;
 import org.springframework.data.annotation.Id;
 
 import java.time.LocalDate;
 import java.util.Objects;
 
-public class TourRequest implements RequestConvertor {
+public class TourRequest {
 
     @Id
     private String id;
@@ -42,221 +41,216 @@ public class TourRequest implements RequestConvertor {
         return id;
     }
 
-    public void setId(String id) {
+    public TourRequest setId(String id) {
         this.id = id;
+        return this;
     }
 
     public Integer getType() {
         return type;
     }
 
-    public void setType(Integer type) {
+    public TourRequest setType(Integer type) {
         this.type = type;
+        return this;
     }
 
     public Integer getKind() {
         return kind;
     }
 
-    public void setKind(Integer kind) {
+    public TourRequest setKind(Integer kind) {
         this.kind = kind;
+        return this;
     }
 
     public Integer getCountry() {
         return country;
     }
 
-    public void setCountry(Integer country) {
+    public TourRequest setCountry(Integer country) {
         this.country = country;
+        return this;
     }
 
     public Integer getCity() {
         return city;
     }
 
-    public void setCity(Integer city) {
+    public TourRequest setCity(Integer city) {
         this.city = city;
+        return this;
     }
 
     public String getRegion() {
         return region;
     }
 
-    public void setRegion(String region) {
+    public TourRequest setRegion(String region) {
         this.region = region;
+        return this;
     }
 
     public String getHotel() {
         return hotel;
     }
 
-    public void setHotel(String hotel) {
+    public TourRequest setHotel(String hotel) {
         this.hotel = hotel;
+        return this;
     }
 
     public String getHotelRating() {
         return hotelRating;
     }
 
-    public void setHotelRating(String hotelRating) {
+    public TourRequest setHotelRating(String hotelRating) {
         this.hotelRating = hotelRating;
+        return this;
     }
 
     public Integer getAdultAmount() {
         return adultAmount;
     }
 
-    public void setAdultAmount(Integer adultAmount) {
+    public TourRequest setAdultAmount(Integer adultAmount) {
         this.adultAmount = adultAmount;
+        return this;
     }
 
     public Integer getChildAmount() {
         return childAmount;
     }
 
-    public void setChildAmount(Integer childAmount) {
+    public TourRequest setChildAmount(Integer childAmount) {
         this.childAmount = childAmount;
+        return this;
     }
 
     public String getChildAge() {
         return childAge;
     }
 
-    public void setChildAge(String childAge) {
+    public TourRequest setChildAge(String childAge) {
         this.childAge = childAge;
+        return this;
     }
 
     public Integer getNightFrom() {
         return nightFrom;
     }
 
-    public void setNightFrom(Integer nightFrom) {
+    public TourRequest setNightFrom(Integer nightFrom) {
         this.nightFrom = nightFrom;
+        return this;
     }
 
     public Integer getNightTill() {
         return nightTill;
     }
 
-    public void setNightTill(Integer nightTill) {
+    public TourRequest setNightTill(Integer nightTill) {
         this.nightTill = nightTill;
+        return this;
     }
 
     public LocalDate getDateFrom() {
         return dateFrom;
     }
 
-    public void setDateFrom(LocalDate dateFrom) {
+    public TourRequest setDateFrom(LocalDate dateFrom) {
         this.dateFrom = dateFrom;
+        return this;
     }
 
     public LocalDate getDateTill() {
         return dateTill;
     }
 
-    public void setDateTill(LocalDate dateTill) {
+    public TourRequest setDateTill(LocalDate dateTill) {
         this.dateTill = dateTill;
+        return this;
     }
 
     public String getMealType() {
         return mealType;
     }
 
-    public void setMealType(String mealType) {
+    public TourRequest setMealType(String mealType) {
         this.mealType = mealType;
+        return this;
     }
 
     public Integer getPriceFrom() {
         return priceFrom;
     }
 
-    public void setPriceFrom(Integer priceFrom) {
+    public TourRequest setPriceFrom(Integer priceFrom) {
         this.priceFrom = priceFrom;
+        return this;
     }
 
     public Integer getPriceTill() {
         return priceTill;
     }
 
-    public void setPriceTill(Integer priceTill) {
+    public TourRequest setPriceTill(Integer priceTill) {
         this.priceTill = priceTill;
+        return this;
     }
 
     public Integer getCurrency() {
         return currency;
     }
 
-    public void setCurrency(Integer currency) {
+    public TourRequest setCurrency(Integer currency) {
         this.currency = currency;
+        return this;
     }
 
     public Integer getOnlyStandartPrice() {
         return onlyStandartPrice;
     }
 
-    public void setOnlyStandartPrice(Integer onlyStandartPrice) {
+    public TourRequest setOnlyStandartPrice(Integer onlyStandartPrice) {
         this.onlyStandartPrice = onlyStandartPrice;
+        return this;
     }
 
     public Integer getPage() {
         return page;
     }
 
-    public void setPage(Integer page) {
+    public TourRequest setPage(Integer page) {
         this.page = page;
+        return this;
     }
 
     public Integer getItemsPerPage() {
         return itemsPerPage;
     }
 
-    public void setItemsPerPage(Integer itemsPerPage) {
+    public TourRequest setItemsPerPage(Integer itemsPerPage) {
         this.itemsPerPage = itemsPerPage;
+        return this;
     }
 
     public Integer getHotelInfo() {
         return hotelInfo;
     }
 
-    public void setHotelInfo(Integer hotelInfo) {
+    public TourRequest setHotelInfo(Integer hotelInfo) {
         this.hotelInfo = hotelInfo;
+        return this;
     }
 
     public LocalDate getUpdateDate() {
         return updateDate;
     }
 
-    public void setUpdateDate(LocalDate updateDate) {
+    public TourRequest setUpdateDate(LocalDate updateDate) {
         this.updateDate = updateDate;
-    }
-
-    @Override
-    public String getRequestConvertedToPath() {
-        RequestPathBuilder builder = new RequestPathBuilder();
-        return builder
-                .addParam("type", getType())
-                .addParam("kind", getKind())
-                .addParam("country", getCountry())
-                .addParam("from_city", getCity())
-                .addParam("region", getRegion())
-                .addParam("hotel", getHotel())
-                .addParam("hotel_rating", getHotelRating())
-                .addParam("adult_amount", getAdultAmount())
-                .addParam("child_amount", getChildAmount())
-                .addParam("child_age", getChildAge())
-                .addParam("night_from", getNightFrom())
-                .addParam("night_till", getNightTill())
-                .addParam("date_from", getDateFrom())
-                .addParam("date_till", getDateTill())
-                .addParam("meal_type", getMealType())
-                .addParam("price_from", getPriceFrom())
-                .addParam("price_till", getPriceTill())
-                .addParam("currency", getCurrency())
-                .addParam("only_standard_price", getOnlyStandartPrice())
-                .addParam("page", getPage())
-                .addParam("items_per_page", getItemsPerPage())
-                .addParam("hotel_info", getHotelInfo())
-                .build();
+        return this;
     }
 
     @Override
