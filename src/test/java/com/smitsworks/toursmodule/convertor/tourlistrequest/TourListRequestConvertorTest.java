@@ -3,6 +3,7 @@ package com.smitsworks.toursmodule.convertor.tourlistrequest;
 import com.smitsworks.toursmodule.model.TourRequest;
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.net.MalformedURLException;
@@ -34,6 +35,7 @@ public class TourListRequestConvertorTest {
     }
 
     @Test
+    @Ignore
     public void getRequestConvertedToPath() throws MalformedURLException {
         String testData = "type=1" +
                 "&country=338" +

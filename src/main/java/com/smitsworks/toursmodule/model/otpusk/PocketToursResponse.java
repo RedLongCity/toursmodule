@@ -4,6 +4,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
+/**
+ * tours/search - поиск туров
+ * https://otpusk.api.domain/tours/search?from=1&to=115&checkIn=2016-10-10&checkTo=2016-10-22&length=6&length
+ * To=8&people=2&access_token=ACCESS_TOKEN
+ */
 public class PocketToursResponse {
 
     /**

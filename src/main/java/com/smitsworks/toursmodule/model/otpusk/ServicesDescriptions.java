@@ -6,8 +6,11 @@ import org.springframework.data.annotation.Id;
 import java.util.Map;
 import java.util.Objects;
 
+/**
+ * tours/services - описание сервисов отелей (статические данные)
+ * https://otpusk.api.domain/tours/services?access_token=ACCESS_TOKEN
+ */
 public class ServicesDescriptions {
-
 
     /**
      * mainService : {"restaurant":"ресторан","a_la_carte":"ресторан A la Carte","cafe":"кафебар","dining":"столовая/зал для завтраков","outdoor_pool":"открытыйбассейн","indoor_pool":"крытый бассейн","conference":"конференц-зал банкетныйзал","business":"бизнес-центр","parking":"автостоянка","rent_car":"прокатавтомобилей","safe":"сейф","wifi":"бесплатныйWi-fi","internet":"интернет-кафе","elevator":"лифт","laundry":"прачечная","cleaners":"химчистка","salon":"парикмахерская / салон красоты","conversion":"обменвалют","atm":"банкомат","doctor":"врач","invalids":"условия дляинвалидов","pets":"размещение с животными","non_smoking":"номера длянекурящих","ski_rental":"прокат лыж","ski_storage":"комната для хранениялыж","transfer":"трансфер в/из аэропорта","late_check":"поздний выезд","dock":"причал для яхт","park":"сад/парк","visa":"оплата платежными картами"}

@@ -6,6 +6,10 @@ import org.springframework.data.annotation.Id;
 import java.util.Map;
 import java.util.Objects;
 
+/**
+ * tours/static - статические данные
+ * https://otpusk.api.domain/tours/static?access_token=ACCESS_TOKEN
+ */
 public class PocketToursStaticData {
 
     /**
