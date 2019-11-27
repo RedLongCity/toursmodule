@@ -1,5 +1,7 @@
 package com.smitsworks.toursmodule.model.otpusk;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
@@ -8,6 +10,7 @@ import java.util.Objects;
  * tours/hotel — получение подробной информации об отеле
  * https://otpusk.api.domain/tours/hotel?hotelId=8987&access_token=ACCESS_TOKEN
  */
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Hotel {
 
     /**
@@ -104,8 +107,18 @@ public class Hotel {
 
                 private String name;
                 private boolean all;
-                private boolean id;
+                private String id;
                 private Object title;
+
+                public ROptionBean() {
+                }
+
+                public ROptionBean(String name, boolean all, String id, Object title) {
+                    this.name = name;
+                    this.all = all;
+                    this.id = id;
+                    this.title = title;
+                }
 
                 public String getName() {
                     return name;
@@ -123,11 +136,11 @@ public class Hotel {
                     this.all = all;
                 }
 
-                public boolean isId() {
+                public String isId() {
                     return id;
                 }
 
-                public void setId(boolean id) {
+                public void setId(String id) {
                     this.id = id;
                 }
 
@@ -137,6 +150,32 @@ public class Hotel {
 
                 public void setTitle(Object title) {
                     this.title = title;
+                }
+
+                @Override
+                public boolean equals(Object o) {
+                    if (this == o) return true;
+                    if (o == null || getClass() != o.getClass()) return false;
+                    ROptionBean that = (ROptionBean) o;
+                    return all == that.all &&
+                            Objects.equals(name, that.name) &&
+                            Objects.equals(id, that.id) &&
+                            Objects.equals(title, that.title);
+                }
+
+                @Override
+                public int hashCode() {
+                    return Objects.hash(name, all, id, title);
+                }
+
+                @Override
+                public String toString() {
+                    return "ROptionBean{" +
+                            "name='" + name + '\'' +
+                            ", all=" + all +
+                            ", id='" + id + '\'' +
+                            ", title=" + title +
+                            '}';
                 }
             }
 
@@ -152,6 +191,16 @@ public class Hotel {
                 private String value;
                 private String title;
                 private String name;
+
+                public HOptionBean() {
+                }
+
+                public HOptionBean(String id, String value, String title, String name) {
+                    this.id = id;
+                    this.value = value;
+                    this.title = title;
+                    this.name = name;
+                }
 
                 public String getId() {
                     return id;
@@ -183,6 +232,32 @@ public class Hotel {
 
                 public void setName(String name) {
                     this.name = name;
+                }
+
+                @Override
+                public boolean equals(Object o) {
+                    if (this == o) return true;
+                    if (o == null || getClass() != o.getClass()) return false;
+                    HOptionBean that = (HOptionBean) o;
+                    return Objects.equals(id, that.id) &&
+                            Objects.equals(value, that.value) &&
+                            Objects.equals(title, that.title) &&
+                            Objects.equals(name, that.name);
+                }
+
+                @Override
+                public int hashCode() {
+                    return Objects.hash(id, value, title, name);
+                }
+
+                @Override
+                public String toString() {
+                    return "HOptionBean{" +
+                            "id='" + id + '\'' +
+                            ", value='" + value + '\'' +
+                            ", title='" + title + '\'' +
+                            ", name='" + name + '\'' +
+                            '}';
                 }
             }
 
@@ -309,7 +384,7 @@ public class Hotel {
                 private Map<String, ServicesBean> services;
                 private String description;
                 private String places;
-                private List<String> images;
+                private List<Object> images;
 
                 public static class ServicesBean {
                     /**
@@ -321,6 +396,15 @@ public class Hotel {
                     private String text;
                     private String cls;
                     private String title;
+
+                    public ServicesBean() {
+                    }
+
+                    public ServicesBean(String text, String cls, String title) {
+                        this.text = text;
+                        this.cls = cls;
+                        this.title = title;
+                    }
 
                     public String getText() {
                         return text;
@@ -416,11 +500,11 @@ public class Hotel {
                     return this;
                 }
 
-                public List<String> getImages() {
+                public List<Object> getImages() {
                     return images;
                 }
 
-                public RBeanX setImages(List<String> images) {
+                public RBeanX setImages(List<Object> images) {
                     this.images = images;
                     return this;
                 }
@@ -618,6 +702,15 @@ public class Hotel {
             private double vote;
             private int count;
 
+            public VsOptionBean() {
+            }
+
+            public VsOptionBean(String name, double vote, int count) {
+                this.name = name;
+                this.vote = vote;
+                this.count = count;
+            }
+
             public String getName() {
                 return name;
             }
@@ -681,6 +774,17 @@ public class Hotel {
             private String n;
             private String rd;
             private String vn;
+
+            public CBeanX() {
+            }
+
+            public CBeanX(String i, String c, String n, String rd, String vn) {
+                this.i = i;
+                this.c = c;
+                this.n = n;
+                this.rd = rd;
+                this.vn = vn;
+            }
 
             public String getI() {
                 return i;
@@ -767,6 +871,18 @@ public class Hotel {
             private String n;
             private String rd;
             private String vn;
+
+            public TBean(String i, String c, String cd, String n, String rd, String vn) {
+                this.i = i;
+                this.c = c;
+                this.cd = cd;
+                this.n = n;
+                this.rd = rd;
+                this.vn = vn;
+            }
+
+            public TBean() {
+            }
 
             public String getI() {
                 return i;
@@ -862,6 +978,17 @@ public class Hotel {
             private int busines;
             private int single;
 
+            public RiBean() {
+            }
+
+            public RiBean(int people, int children, int seniors, int busines, int single) {
+                this.people = people;
+                this.children = children;
+                this.seniors = seniors;
+                this.busines = busines;
+                this.single = single;
+            }
+
             public int getPeople() {
                 return people;
             }
@@ -946,24 +1073,27 @@ public class Hotel {
                 return n;
             }
 
-            public void setN(String n) {
+            public AgBean setN(String n) {
                 this.n = n;
+                return this;
             }
 
             public String getA() {
                 return a;
             }
 
-            public void setA(String a) {
+            public AgBean setA(String a) {
                 this.a = a;
+                return this;
             }
 
             public List<OBeanX> getO() {
                 return o;
             }
 
-            public void setO(List<OBeanX> o) {
+            public AgBean setO(List<OBeanX> o) {
                 this.o = o;
+                return this;
             }
 
             public static class OBeanX {
@@ -976,6 +1106,15 @@ public class Hotel {
                 private int id;
                 private String city;
                 private String address;
+
+                public OBeanX() {
+                }
+
+                public OBeanX(int id, String city, String address) {
+                    this.id = id;
+                    this.city = city;
+                    this.address = address;
+                }
 
                 public int getId() {
                     return id;
@@ -1365,5 +1504,56 @@ public class Hotel {
                     ", f=" + f +
                     '}';
         }
+    }
+
+    public HotelBean getHotel() {
+        return hotel;
+    }
+
+    public Hotel setHotel(HotelBean hotel) {
+        this.hotel = hotel;
+        return this;
+    }
+
+    public String getApi_version() {
+        return api_version;
+    }
+
+    public Hotel setApi_version(String api_version) {
+        this.api_version = api_version;
+        return this;
+    }
+
+    public double getTime() {
+        return time;
+    }
+
+    public Hotel setTime(double time) {
+        this.time = time;
+        return this;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Hotel hotel1 = (Hotel) o;
+        return Double.compare(hotel1.time, time) == 0 &&
+                Objects.equals(hotel, hotel1.hotel) &&
+                Objects.equals(api_version, hotel1.api_version);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(hotel, api_version, time);
+    }
+
+    @Override
+    public String toString() {
+        return "Hotel{" +
+                "hotel=" + hotel +
+                ", api_version='" + api_version + '\'' +
+                ", time=" + time +
+                '}';
     }
 }
