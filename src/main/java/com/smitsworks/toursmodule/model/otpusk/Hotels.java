@@ -1,16 +1,23 @@
 package com.smitsworks.toursmodule.model.otpusk;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
 import java.time.LocalTime;
 import java.util.List;
-import java.util.Objects;
 
 /**
  * tours/hotels - список отелей по стране или курортам
  * https://otpusk.api.domain/tours/hotels?countryId=115&cityId=953,955,956&with=price&access_token=ACCESS_TOK
  * EN
  */
+@Getter
+@Setter
+@EqualsAndHashCode
+@ToString
 public class Hotels {
 
     /**
@@ -26,54 +33,10 @@ public class Hotels {
     private double time;
     private List<HotelsBean> hotels;
 
-    public String getApi_version() {
-        return api_version;
-    }
-
-    public void setApi_version(String api_version) {
-        this.api_version = api_version;
-    }
-
-    public double getTime() {
-        return time;
-    }
-
-    public void setTime(double time) {
-        this.time = time;
-    }
-
-    public List<HotelsBean> getHotels() {
-        return hotels;
-    }
-
-    public void setHotels(List<HotelsBean> hotels) {
-        this.hotels = hotels;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Hotels hotels1 = (Hotels) o;
-        return Double.compare(hotels1.time, time) == 0 &&
-                Objects.equals(api_version, hotels1.api_version) &&
-                Objects.equals(hotels, hotels1.hotels);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(api_version, time, hotels);
-    }
-
-    @Override
-    public String toString() {
-        return "Hotels{" +
-                "api_version='" + api_version + '\'' +
-                ", time=" + time +
-                ", hotels=" + hotels +
-                '}';
-    }
-
+    @Getter
+    @Setter
+    @EqualsAndHashCode
+    @ToString
     public static class HotelsBean {
         /**
          * id : 39631
@@ -100,133 +63,5 @@ public class Hotels {
         private String currency;
         private int rating;
         private String services;
-
-        public int getId() {
-            return id;
-        }
-
-        public void setId(int id) {
-            this.id = id;
-        }
-
-        public String getName() {
-            return name;
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
-
-        public String getCode() {
-            return code;
-        }
-
-        public void setCode(String code) {
-            this.code = code;
-        }
-
-        public String getStars() {
-            return stars;
-        }
-
-        public void setStars(String stars) {
-            this.stars = stars;
-        }
-
-        public int getCityId() {
-            return cityId;
-        }
-
-        public void setCityId(int cityId) {
-            this.cityId = cityId;
-        }
-
-        public int getCountryId() {
-            return countryId;
-        }
-
-        public void setCountryId(int countryId) {
-            this.countryId = countryId;
-        }
-
-        public String getLastUpdate() {
-            return lastUpdate;
-        }
-
-        public void setLastUpdate(String lastUpdate) {
-            this.lastUpdate = lastUpdate;
-        }
-
-        public String getMinPrice() {
-            return minPrice;
-        }
-
-        public void setMinPrice(String minPrice) {
-            this.minPrice = minPrice;
-        }
-
-        public String getCurrency() {
-            return currency;
-        }
-
-        public void setCurrency(String currency) {
-            this.currency = currency;
-        }
-
-        public int getRating() {
-            return rating;
-        }
-
-        public void setRating(int rating) {
-            this.rating = rating;
-        }
-
-        public String getServices() {
-            return services;
-        }
-
-        public void setServices(String services) {
-            this.services = services;
-        }
-
-        @Override
-        public boolean equals(Object o) {
-            if (this == o) return true;
-            if (o == null || getClass() != o.getClass()) return false;
-            HotelsBean that = (HotelsBean) o;
-            return id == that.id &&
-                    cityId == that.cityId &&
-                    countryId == that.countryId &&
-                    rating == that.rating &&
-                    Objects.equals(name, that.name) &&
-                    Objects.equals(code, that.code) &&
-                    Objects.equals(stars, that.stars) &&
-                    Objects.equals(lastUpdate, that.lastUpdate) &&
-                    Objects.equals(minPrice, that.minPrice) &&
-                    Objects.equals(currency, that.currency) &&
-                    Objects.equals(services, that.services);
-        }
-
-        @Override
-        public int hashCode() {
-            return Objects.hash(id, name, code, stars, cityId, countryId, lastUpdate, minPrice, currency, rating, services);
-        }
-
-        @Override
-        public String toString() {
-            return "HotelsBean{" +
-                    "id=" + id +
-                    ", name='" + name + '\'' +
-                    ", code='" + code + '\'' +
-                    ", stars='" + stars + '\'' +
-                    ", cityId=" + cityId +
-                    ", countryId=" + countryId +
-                    ", lastUpdate='" + lastUpdate + '\'' +
-                    ", minPrice='" + minPrice + '\'' +
-                    ", currency='" + currency + '\'' +
-                    ", rating=" + rating +
-                    ", services='" + services + '\'' +
-                    '}';
-        }
     }
 }

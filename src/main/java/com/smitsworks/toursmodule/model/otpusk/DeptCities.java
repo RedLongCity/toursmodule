@@ -1,16 +1,22 @@
 package com.smitsworks.toursmodule.model.otpusk;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.springframework.data.annotation.Id;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
 import java.time.LocalTime;
 import java.util.List;
-import java.util.Objects;
 
 /**
  * tours/deptCities - список городов вылета
  * https://otpusk.api.domain/tours/deptCities?geoId=55&access_token=ACCESS_TOKEN
  */
+@Getter
+@Setter
+@EqualsAndHashCode
+@ToString
 public class DeptCities {
 
     /**
@@ -26,54 +32,10 @@ public class DeptCities {
     private double time;
     private List<DeptCitiesBean> deptCities;
 
-    public String getApi_version() {
-        return api_version;
-    }
-
-    public void setApi_version(String api_version) {
-        this.api_version = api_version;
-    }
-
-    public double getTime() {
-        return time;
-    }
-
-    public void setTime(double time) {
-        this.time = time;
-    }
-
-    public List<DeptCitiesBean> getDeptCities() {
-        return deptCities;
-    }
-
-    public void setDeptCities(List<DeptCitiesBean> deptCities) {
-        this.deptCities = deptCities;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        DeptCities that = (DeptCities) o;
-        return Double.compare(that.time, time) == 0 &&
-                Objects.equals(api_version, that.api_version) &&
-                Objects.equals(deptCities, that.deptCities);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(api_version, time, deptCities);
-    }
-
-    @Override
-    public String toString() {
-        return "DeptCities{" +
-                "api_version='" + api_version + '\'' +
-                ", time=" + time +
-                ", deptCities=" + deptCities +
-                '}';
-    }
-
+    @Getter
+    @Setter
+    @EqualsAndHashCode
+    @ToString
     public static class DeptCitiesBean {
         /**
          * id : 1925
@@ -86,63 +48,5 @@ public class DeptCities {
         private String name;
         private String rel;
         private boolean selected;
-
-        public String getId() {
-            return id;
-        }
-
-        public void setId(String id) {
-            this.id = id;
-        }
-
-        public String getName() {
-            return name;
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
-
-        public String getRel() {
-            return rel;
-        }
-
-        public void setRel(String rel) {
-            this.rel = rel;
-        }
-
-        public boolean isSelected() {
-            return selected;
-        }
-
-        public void setSelected(boolean selected) {
-            this.selected = selected;
-        }
-
-        @Override
-        public boolean equals(Object o) {
-            if (this == o) return true;
-            if (o == null || getClass() != o.getClass()) return false;
-            DeptCitiesBean that = (DeptCitiesBean) o;
-            return selected == that.selected &&
-                    Objects.equals(id, that.id) &&
-                    Objects.equals(name, that.name) &&
-                    Objects.equals(rel, that.rel);
-        }
-
-        @Override
-        public int hashCode() {
-            return Objects.hash(id, name, rel, selected);
-        }
-
-        @Override
-        public String toString() {
-            return "DeptCitiesBean{" +
-                    "id='" + id + '\'' +
-                    ", name='" + name + '\'' +
-                    ", rel='" + rel + '\'' +
-                    ", selected=" + selected +
-                    '}';
-        }
     }
 }

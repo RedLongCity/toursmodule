@@ -1,15 +1,22 @@
 package com.smitsworks.toursmodule.model.otpusk;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 import org.springframework.data.annotation.Id;
 
 import java.util.List;
-import java.util.Objects;
 
 /**
  * tours/cities - список курортов по стране
  * https://otpusk.api.domain/tours/cities?countryId=115&with=price&access_token=ACCESS_TOKEN
  */
+@Getter
+@Setter
+@EqualsAndHashCode
+@ToString
 public class Cities {
 
     /**
@@ -26,54 +33,10 @@ public class Cities {
     private double time;
     private List<CitiesBean> cities;
 
-    public String getApi_version() {
-        return api_version;
-    }
-
-    public void setApi_version(String api_version) {
-        this.api_version = api_version;
-    }
-
-    public double getTime() {
-        return time;
-    }
-
-    public void setTime(double time) {
-        this.time = time;
-    }
-
-    public List<CitiesBean> getCities() {
-        return cities;
-    }
-
-    public void setCities(List<CitiesBean> cities) {
-        this.cities = cities;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Cities cities1 = (Cities) o;
-        return Double.compare(cities1.time, time) == 0 &&
-                Objects.equals(api_version, cities1.api_version) &&
-                Objects.equals(cities, cities1.cities);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(api_version, time, cities);
-    }
-
-    @Override
-    public String toString() {
-        return "Cities{" +
-                "api_version='" + api_version + '\'' +
-                ", time=" + time +
-                ", cities=" + cities +
-                '}';
-    }
-
+    @Getter
+    @Setter
+    @EqualsAndHashCode
+    @ToString
     public static class CitiesBean {
         /**
          * id : 1038
@@ -103,142 +66,5 @@ public class Cities {
         private String currency;
         private String transport;
 
-        public int getId() {
-            return id;
-        }
-
-        public void setId(int id) {
-            this.id = id;
-        }
-
-        public String getName() {
-            return name;
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
-
-        public String getNameVn() {
-            return nameVn;
-        }
-
-        public void setNameVn(String nameVn) {
-            this.nameVn = nameVn;
-        }
-
-        public String getCode() {
-            return code;
-        }
-
-        public void setCode(String code) {
-            this.code = code;
-        }
-
-        public double getLat() {
-            return lat;
-        }
-
-        public void setLat(double lat) {
-            this.lat = lat;
-        }
-
-        public double getLng() {
-            return lng;
-        }
-
-        public void setLng(double lng) {
-            this.lng = lng;
-        }
-
-        public int getZoom() {
-            return zoom;
-        }
-
-        public void setZoom(int zoom) {
-            this.zoom = zoom;
-        }
-
-        public boolean isBold() {
-            return bold;
-        }
-
-        public void setBold(boolean bold) {
-            this.bold = bold;
-        }
-
-        public int getUah() {
-            return uah;
-        }
-
-        public void setUah(int uah) {
-            this.uah = uah;
-        }
-
-        public double getPrice() {
-            return price;
-        }
-
-        public void setPrice(double price) {
-            this.price = price;
-        }
-
-        public String getCurrency() {
-            return currency;
-        }
-
-        public void setCurrency(String currency) {
-            this.currency = currency;
-        }
-
-        public String getTransport() {
-            return transport;
-        }
-
-        public void setTransport(String transport) {
-            this.transport = transport;
-        }
-
-        @Override
-        public boolean equals(Object o) {
-            if (this == o) return true;
-            if (o == null || getClass() != o.getClass()) return false;
-            CitiesBean that = (CitiesBean) o;
-            return id == that.id &&
-                    Double.compare(that.lat, lat) == 0 &&
-                    Double.compare(that.lng, lng) == 0 &&
-                    zoom == that.zoom &&
-                    bold == that.bold &&
-                    uah == that.uah &&
-                    Double.compare(that.price, price) == 0 &&
-                    Objects.equals(name, that.name) &&
-                    Objects.equals(nameVn, that.nameVn) &&
-                    Objects.equals(code, that.code) &&
-                    Objects.equals(currency, that.currency) &&
-                    Objects.equals(transport, that.transport);
-        }
-
-        @Override
-        public int hashCode() {
-            return Objects.hash(id, name, nameVn, code, lat, lng, zoom, bold, uah, price, currency, transport);
-        }
-
-        @Override
-        public String toString() {
-            return "CitiesBean{" +
-                    "id=" + id +
-                    ", name='" + name + '\'' +
-                    ", nameVn='" + nameVn + '\'' +
-                    ", code='" + code + '\'' +
-                    ", lat=" + lat +
-                    ", lng=" + lng +
-                    ", zoom=" + zoom +
-                    ", bold=" + bold +
-                    ", uah=" + uah +
-                    ", price=" + price +
-                    ", currency='" + currency + '\'' +
-                    ", transport='" + transport + '\'' +
-                    '}';
-        }
     }
 }

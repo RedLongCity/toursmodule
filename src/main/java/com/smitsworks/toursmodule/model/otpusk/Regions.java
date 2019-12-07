@@ -2,15 +2,22 @@ package com.smitsworks.toursmodule.model.otpusk;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonSetter;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 import org.springframework.data.annotation.Id;
 
 import java.util.List;
-import java.util.Objects;
 
 /**
  * tours/regions - список городов пользователя (с определением рекомендуемого по IP)
  * https://otpusk.api.domain/tours/regions?access_token=ACCESS_TOKEN
  */
+@Getter
+@Setter
+@EqualsAndHashCode
+@ToString
 public class Regions {
 
     /**
@@ -27,54 +34,10 @@ public class Regions {
     private double time;
     private List<RegionsBean> regions;
 
-    public String getApi_version() {
-        return api_version;
-    }
-
-    public void setApi_version(String api_version) {
-        this.api_version = api_version;
-    }
-
-    public double getTime() {
-        return time;
-    }
-
-    public void setTime(double time) {
-        this.time = time;
-    }
-
-    public List<RegionsBean> getRegions() {
-        return regions;
-    }
-
-    public void setRegions(List<RegionsBean> regions) {
-        this.regions = regions;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Regions regions1 = (Regions) o;
-        return Double.compare(regions1.time, time) == 0 &&
-                Objects.equals(api_version, regions1.api_version) &&
-                Objects.equals(regions, regions1.regions);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(api_version, time, regions);
-    }
-
-    @Override
-    public String toString() {
-        return "Regions{" +
-                "api_version='" + api_version + '\'' +
-                ", time=" + time +
-                ", regions=" + regions +
-                '}';
-    }
-
+    @Getter
+    @Setter
+    @EqualsAndHashCode
+    @ToString
     public static class RegionsBean {
         /**
          * id : 1922
@@ -90,73 +53,5 @@ public class Regions {
         private String rel;
         @JsonSetter("IPselected")
         private boolean iPselected;
-
-        public String getId() {
-            return id;
-        }
-
-        public void setId(String id) {
-            this.id = id;
-        }
-
-        public String getName() {
-            return name;
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
-
-        public String getDeptCities() {
-            return deptCities;
-        }
-
-        public void setDeptCities(String deptCities) {
-            this.deptCities = deptCities;
-        }
-
-        public String getRel() {
-            return rel;
-        }
-
-        public void setRel(String rel) {
-            this.rel = rel;
-        }
-
-        public boolean isiPselected() {
-            return iPselected;
-        }
-
-        public void setiPselected(boolean iPselected) {
-            this.iPselected = iPselected;
-        }
-
-        @Override
-        public boolean equals(Object o) {
-            if (this == o) return true;
-            if (o == null || getClass() != o.getClass()) return false;
-            RegionsBean that = (RegionsBean) o;
-            return iPselected == that.iPselected &&
-                    Objects.equals(id, that.id) &&
-                    Objects.equals(name, that.name) &&
-                    Objects.equals(deptCities, that.deptCities) &&
-                    Objects.equals(rel, that.rel);
-        }
-
-        @Override
-        public int hashCode() {
-            return Objects.hash(id, name, deptCities, rel, iPselected);
-        }
-
-        @Override
-        public String toString() {
-            return "RegionsBean{" +
-                    "id='" + id + '\'' +
-                    ", name='" + name + '\'' +
-                    ", deptCities='" + deptCities + '\'' +
-                    ", rel='" + rel + '\'' +
-                    ", IPselected=" + iPselected +
-                    '}';
-        }
     }
 }

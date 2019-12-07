@@ -31,7 +31,7 @@ public class RegionsParsingTest {
         regionsBean.setName("Александрия");
         regionsBean.setDeptCities("1874,1544,1875");
         regionsBean.setRel("Александрии");
-        regionsBean.setiPselected(false);
+        regionsBean.setIPselected(false);
     }
 
     @Test

@@ -28,12 +28,6 @@ public class HotelParsingTest {
 
     @Before
     public void populate() {
-        hotel = new Hotel();
-        Hotel.HotelBean hotelBean = new Hotel.HotelBean();
-
-        hotel.setApi_version("2.4")
-                .setTime(0.3859)
-                .setHotel(hotelBean);
 
         Map<String, String> s = new HashMap<>();
         s.put("s", "four");
@@ -130,12 +124,13 @@ public class HotelParsingTest {
         b.put("umbrella", new Hotel.HotelBean.EBean.HOptionBean("free", "<strike style=\"color:green\" title=\"бесплатно\">$</strike>", "бесплатно", "зонтики"));
         b.put("towels", new Hotel.HotelBean.EBean.HOptionBean("yes", "есть", "", "пляжные полотенца"));
 
-        Hotel.HotelBean.EBean eBean = new Hotel.HotelBean.EBean();
-        eBean.setR(r)
-                .setH(h)
-                .setC(c)
-                .setS(sMap)
-                .setB(b);
+        Hotel.HotelBean.EBean eBean = Hotel.HotelBean.EBean.builder()
+                .r(r)
+                .h(h)
+                .c(c)
+                .s(sMap)
+                .b(b)
+                .build();
 
         Map<String, Hotel.HotelBean.OBean.RBeanX.ServicesBean> stringServicesBeanMap = new HashMap<>();
         stringServicesBeanMap.put("shower",
@@ -155,13 +150,14 @@ public class HotelParsingTest {
         stringServicesBeanMap.put("terrace",
                 new Hotel.HotelBean.OBean.RBeanX.ServicesBean("балкон/терраса", "yes", ""));
 
-        Hotel.HotelBean.OBean.RBeanX rBeanX = new Hotel.HotelBean.OBean.RBeanX();
-        rBeanX.setId("356623")
-                .setName("Family Room")
-                .setServices(stringServicesBeanMap)
-                .setDescription("")
-                .setPlaces("6")
-                .setImages(Collections.EMPTY_LIST);
+        Hotel.HotelBean.OBean.RBeanX rBeanX = Hotel.HotelBean.OBean.RBeanX.builder()
+                .id("356623")
+                .name("Family Room")
+                .services(stringServicesBeanMap)
+                .description("")
+                .places("6")
+                .images(Collections.EMPTY_LIST)
+                .build();
 
         Map<String, Hotel.HotelBean.OBean.RBeanX.ServicesBean> stringServicesBeanMap1 = new HashMap<>();
         stringServicesBeanMap1.put("shower",
@@ -181,13 +177,14 @@ public class HotelParsingTest {
         stringServicesBeanMap1.put("terrace",
                 new Hotel.HotelBean.OBean.RBeanX.ServicesBean("балкон/терраса", "yes", ""));
 
-        Hotel.HotelBean.OBean.RBeanX rBeanX1 = new Hotel.HotelBean.OBean.RBeanX();
-        rBeanX1.setId("356621")
-                .setName("Standard Pool View Room")
-                .setServices(stringServicesBeanMap1)
-                .setDescription("")
-                .setPlaces("0")
-                .setImages(Collections.EMPTY_LIST);
+        Hotel.HotelBean.OBean.RBeanX rBeanX1 = Hotel.HotelBean.OBean.RBeanX.builder()
+                .id("356621")
+                .name("Standard Pool View Room")
+                .services(stringServicesBeanMap1)
+                .description("")
+                .places("0")
+                .images(Collections.EMPTY_LIST)
+                .build();
 
         Map<String, Hotel.HotelBean.OBean.RBeanX.ServicesBean> stringServicesBeanMap2 = new HashMap<>();
         stringServicesBeanMap2.put("shower",
@@ -210,13 +207,14 @@ public class HotelParsingTest {
         List<Object> images = new ArrayList<>();
         images.add(new LinkedHashMap<>());
 
-        Hotel.HotelBean.OBean.RBeanX rBeanX2 = new Hotel.HotelBean.OBean.RBeanX();
-        rBeanX2.setId("35174")
-                .setName("Standard Room")
-                .setServices(stringServicesBeanMap2)
-                .setDescription("")
-                .setPlaces("5")
-                .setImages(images);
+        Hotel.HotelBean.OBean.RBeanX rBeanX2 = Hotel.HotelBean.OBean.RBeanX.builder()
+                .id("35174")
+                .name("Standard Room")
+                .services(stringServicesBeanMap2)
+                .description("")
+                .places("5")
+                .images(images)
+                .build();
 
         List<Hotel.HotelBean.OBean.RBeanX> rBeanXList = new ArrayList<>();
         rBeanXList.add(rBeanX);
@@ -275,19 +273,20 @@ public class HotelParsingTest {
         cs.put("crib", "free");
         cs.put("nurse", "pay");
 
-        Hotel.HotelBean.OBean oBean = new Hotel.HotelBean.OBean();
-        oBean.setR(rBeanXList)
-                .setB("Пляж в 150 м, между пляжем и отелем есть дорога, есть подземный переход. Протяжённость – 80 м. Бар на пляже.")
-                .setBs(bs)
-                .setS("1 водная горка, часы работы 10:00-11:30/15:00-16:30.")
-                .setSs(ss)
-                .setHs(hs)
-                .setC("Мини-клуб для детей в возрасте от 4 до 12 лет, часы работы: с 10:00-12:00/15:00-17:00. <br />\nАренда детских колясок (платно).")
-                .setCs(cs)
-                .setDs("Всего 110 номеров в двух пятиэтажных зданиях.")
-                .setFh("Wi-Fi (платно). <br />\nЗавтрак 07:30-09:30, обед 12:30-14:00, чай/выпечка (у бассейна) 17:00-18:00, ужин 19:00-21:00. Шведский стол. <br />\nБар у бассейна, 10:00-23:00. <br />\nБар на пляже, 10:00-18:00 (предлагаются безалкогольные напитки). <br />\n1 открытый бассейн, площадь 126 кв.м, часы работы: 08:00-18:00.")
-                .setDi("12 км от г. Алания. 110 км от аэропорта Анталии.")
-                .setDc("Отель расположен рядом с посёлком Конаклы, через дорогу от пляжа. Построен в 1996 году, последняя реновация проведена в 2017 году. Отель состоит из двух пятиэтажных корпусов. Подойдёт для экономичного семейного и молодёжного отдыха.");
+        Hotel.HotelBean.OBean oBean = Hotel.HotelBean.OBean.builder()
+                .r(rBeanXList)
+                .b("Пляж в 150 м, между пляжем и отелем есть дорога, есть подземный переход. Протяжённость – 80 м. Бар на пляже.")
+                .bs(bs)
+                .s("1 водная горка, часы работы 10:00-11:30/15:00-16:30.")
+                .ss(ss)
+                .hs(hs)
+                .c("Мини-клуб для детей в возрасте от 4 до 12 лет, часы работы: с 10:00-12:00/15:00-17:00. <br />\nАренда детских колясок (платно).")
+                .cs(cs)
+                .ds("Всего 110 номеров в двух пятиэтажных зданиях.")
+                .fh("Wi-Fi (платно). <br />\nЗавтрак 07:30-09:30, обед 12:30-14:00, чай/выпечка (у бассейна) 17:00-18:00, ужин 19:00-21:00. Шведский стол. <br />\nБар у бассейна, 10:00-23:00. <br />\nБар на пляже, 10:00-18:00 (предлагаются безалкогольные напитки). <br />\n1 открытый бассейн, площадь 126 кв.м, часы работы: 08:00-18:00.")
+                .di("12 км от г. Алания. 110 км от аэропорта Анталии.")
+                .dc("Отель расположен рядом с посёлком Конаклы, через дорогу от пляжа. Построен в 1996 году, последняя реновация проведена в 2017 году. Отель состоит из двух пятиэтажных корпусов. Подойдёт для экономичного семейного и молодёжного отдыха.")
+                .build();
 
         List<String> f = new ArrayList<>();
         f.add("00/02/92/98/2929881.jpg");
@@ -315,38 +314,46 @@ public class HotelParsingTest {
         List<Hotel.HotelBean.AgBean.OBeanX> oBeanXList = new ArrayList<>();
         oBeanXList.add(new Hotel.HotelBean.AgBean.OBeanX(8806, "Кривой Рог", "Ивана Авраменка, 3"));
 
-        Hotel.HotelBean.AgBean agBean = new Hotel.HotelBean.AgBean();
-        agBean.setN("Море Туров Кривой Рог на Вечернем")
-                .setA("")
-                .setO(oBeanXList);
+        Hotel.HotelBean.AgBean agBean = Hotel.HotelBean.AgBean.builder()
+                .n("Море Туров Кривой Рог на Вечернем")
+                .a("")
+                .o(oBeanXList)
+                .build();
 
-        hotelBean.setArea("9000")
-                .setPriceOperatorId("3331")
-                .setKey("a74bea0e139e68c06de07834385080e5")
-                .setI("20178")
-                .setN("Sunside Beach Hotel 4*")
-                .setNm("Sunside Beach Hotel")
-                .setH("Sunside_Beach_Hotel")
-                .setHru("Сансайд Бич Хотел,бывш. Blue Moon Beach")
-                .setS(s)
-                .setAd(ad)
-                .setP(p)
-                .setFm(fm)
-                .setTp(tp)
-                .setE(eBean)
-                .setO(oBean)
-                .setC(new Hotel.HotelBean.CBeanX("953", "alanja", "Алания", "Алании", "Аланию"))
-                .setT(new Hotel.HotelBean.TBean("115", "turkey", "tr", "Турция", "Турции", "Турцию"))
-                .setF(f)
-                .setFc(14)
-                .setR(2.7)
-                .setRi(new Hotel.HotelBean.RiBean(17, 17, 16, 1, 8))
-                .setTr("2.6755")
-                .setVi("a74bea0e139e68c06de07834385080e5")
-                .setV("84")
-                .setVs(stringVsOptionBeanMap)
-                .setWatermark("")
-                .setAg(agBean);
+        Hotel.HotelBean hotelBean = Hotel.HotelBean.builder()
+                .area("9000")
+                .priceOperatorId("3331")
+                .key("a74bea0e139e68c06de07834385080e5")
+                .i("20178")
+                .n("Sunside Beach Hotel 4*")
+                .nm("Sunside Beach Hotel")
+                .h("Sunside_Beach_Hotel")
+                .hru("Сансайд Бич Хотел,бывш. Blue Moon Beach")
+                .s(s)
+                .ad(ad)
+                .p(p)
+                .fm(fm)
+                .tp(tp)
+                .e(eBean)
+                .o(oBean)
+                .c(new Hotel.HotelBean.CBeanX("953", "alanja", "Алания", "Алании", "Аланию"))
+                .t(new Hotel.HotelBean.TBean("115", "turkey", "tr", "Турция", "Турции", "Турцию"))
+                .f(f)
+                .fc(14)
+                .r(2.7)
+                .ri(new Hotel.HotelBean.RiBean(17, 17, 16, 1, 8))
+                .tr("2.6755")
+                .vi("a74bea0e139e68c06de07834385080e5")
+                .v("84")
+                .vs(stringVsOptionBeanMap)
+                .watermark("")
+                .ag(agBean)
+                .build();
+
+        hotel = Hotel.builder()
+                .api_version("2.4")
+                .time(0.3859)
+                .hotel(hotelBean).build();
     }
 
     @Test

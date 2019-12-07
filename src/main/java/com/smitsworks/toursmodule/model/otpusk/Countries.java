@@ -2,15 +2,22 @@ package com.smitsworks.toursmodule.model.otpusk;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonSetter;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 import org.springframework.data.annotation.Id;
 
 import java.util.List;
-import java.util.Objects;
 
 /**
  * tours/countries - список стран
  * https://otpusk.api.domain/tours/countries?with=price&access_token=ACCESS_TOKEN
  */
+@Getter
+@Setter
+@EqualsAndHashCode
+@ToString
 public class Countries {
 
     /**
@@ -27,56 +34,10 @@ public class Countries {
     private double time;
     private List<CountriesBean> countries;
 
-    public String getApi_version() {
-        return api_version;
-    }
-
-    public void setApi_version(String api_version) {
-        this.api_version = api_version;
-    }
-
-    public double getTime() {
-        return time;
-    }
-
-    public void setTime(double time) {
-        this.time = time;
-    }
-
-    public List<CountriesBean> getCountries() {
-        return countries;
-    }
-
-    public void setCountries(List<CountriesBean> countries) {
-        this.countries = countries;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Countries countries1 = (Countries) o;
-        return Double.compare(countries1.time, time) == 0 &&
-                Objects.equals(id, countries1.id) &&
-                Objects.equals(api_version, countries1.api_version) &&
-                Objects.equals(countries, countries1.countries);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, api_version, time, countries);
-    }
-
-    @Override
-    public String toString() {
-        return "Countries{" +
-                "id='" + id + '\'' +
-                ", api_version='" + api_version + '\'' +
-                ", time=" + time +
-                ", countries=" + countries +
-                '}';
-    }
-
+    @Getter
+    @Setter
+    @EqualsAndHashCode
+    @ToString
     public static class CountriesBean {
         /**
          * id : 7
@@ -112,163 +73,5 @@ public class Countries {
         private double lng;
         private int zoom;
         private boolean bold;
-
-        public int getId() {
-            return id;
-        }
-
-        public void setId(int id) {
-            this.id = id;
-        }
-
-        public String getName() {
-            return name;
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
-
-        public String getNameVn() {
-            return nameVn;
-        }
-
-        public void setNameVn(String nameVn) {
-            this.nameVn = nameVn;
-        }
-
-        public String getNamePr() {
-            return namePr;
-        }
-
-        public void setNamePr(String namePr) {
-            this.namePr = namePr;
-        }
-
-        public String getIso() {
-            return iso;
-        }
-
-        public void setIso(String iso) {
-            this.iso = iso;
-        }
-
-        public String getIata() {
-            return iata;
-        }
-
-        public void setIata(String iata) {
-            this.iata = iata;
-        }
-
-        public String getCode() {
-            return code;
-        }
-
-        public void setCode(String code) {
-            this.code = code;
-        }
-
-        public String getVisa() {
-            return visa;
-        }
-
-        public void setVisa(String visa) {
-            this.visa = visa;
-        }
-
-        public String getTransport() {
-            return transport;
-        }
-
-        public void setTransport(String transport) {
-            this.transport = transport;
-        }
-
-        public String getDefaultX() {
-            return defaultX;
-        }
-
-        public void setDefaultX(String defaultX) {
-            this.defaultX = defaultX;
-        }
-
-        public double getLat() {
-            return lat;
-        }
-
-        public void setLat(double lat) {
-            this.lat = lat;
-        }
-
-        public double getLng() {
-            return lng;
-        }
-
-        public void setLng(double lng) {
-            this.lng = lng;
-        }
-
-        public int getZoom() {
-            return zoom;
-        }
-
-        public void setZoom(int zoom) {
-            this.zoom = zoom;
-        }
-
-        public boolean isBold() {
-            return bold;
-        }
-
-        public void setBold(boolean bold) {
-            this.bold = bold;
-        }
-
-        @Override
-        public boolean equals(Object o) {
-            if (this == o) return true;
-            if (o == null || getClass() != o.getClass()) return false;
-            CountriesBean that = (CountriesBean) o;
-            return id == that.id &&
-                    Double.compare(that.lat, lat) == 0 &&
-                    Double.compare(that.lng, lng) == 0 &&
-                    zoom == that.zoom &&
-                    bold == that.bold &&
-                    Objects.equals(name, that.name) &&
-                    Objects.equals(nameVn, that.nameVn) &&
-                    Objects.equals(namePr, that.namePr) &&
-                    Objects.equals(iso, that.iso) &&
-                    Objects.equals(iata, that.iata) &&
-                    Objects.equals(code, that.code) &&
-                    Objects.equals(visa, that.visa) &&
-                    Objects.equals(transport, that.transport) &&
-                    Objects.equals(defaultX, that.defaultX);
-        }
-
-        @Override
-        public int hashCode() {
-            return Objects.hash(id, name, nameVn, namePr, iso, iata, code, visa, transport, defaultX, lat, lng, zoom, bold);
-        }
-
-        @Override
-        public String toString() {
-            return "CountriesBean{" +
-                    "id=" + id +
-                    ", name='" + name + '\'' +
-                    ", nameVn='" + nameVn + '\'' +
-                    ", namePr='" + namePr + '\'' +
-                    ", iso='" + iso + '\'' +
-                    ", iata='" + iata + '\'' +
-                    ", code='" + code + '\'' +
-                    ", visa='" + visa + '\'' +
-                    ", transport='" + transport + '\'' +
-                    ", defaultX='" + defaultX + '\'' +
-                    ", lat=" + lat +
-                    ", lng=" + lng +
-                    ", zoom=" + zoom +
-                    ", bold=" + bold +
-                    '}';
-        }
     }
 }

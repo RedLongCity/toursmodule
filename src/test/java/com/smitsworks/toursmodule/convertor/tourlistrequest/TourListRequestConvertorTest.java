@@ -18,7 +18,7 @@ public class TourListRequestConvertorTest {
     private final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yy");
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         testTourRequest = new TourRequest()
                 .setType(1)
                 .setCountry(338)

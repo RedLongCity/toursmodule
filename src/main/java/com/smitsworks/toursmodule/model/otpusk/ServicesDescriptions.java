@@ -1,15 +1,22 @@
 package com.smitsworks.toursmodule.model.otpusk;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 import org.springframework.data.annotation.Id;
 
 import java.util.Map;
-import java.util.Objects;
 
 /**
  * tours/services - описание сервисов отелей (статические данные)
  * https://otpusk.api.domain/tours/services?access_token=ACCESS_TOKEN
  */
+@Getter
+@Setter
+@EqualsAndHashCode
+@ToString
 public class ServicesDescriptions {
 
     /**
@@ -29,77 +36,4 @@ public class ServicesDescriptions {
     private Map<String, String> sportService;
     private Map<String, String> beachService;
     private Map<String, String> roomService;
-
-    public Map<String, String> getMainService() {
-        return mainService;
-    }
-
-    public ServicesDescriptions setMainService(Map<String, String> mainService) {
-        this.mainService = mainService;
-        return this;
-    }
-
-    public Map<String, String> getChildService() {
-        return childService;
-    }
-
-    public ServicesDescriptions setChildService(Map<String, String> childService) {
-        this.childService = childService;
-        return this;
-    }
-
-    public Map<String, String> getSportService() {
-        return sportService;
-    }
-
-    public ServicesDescriptions setSportService(Map<String, String> sportService) {
-        this.sportService = sportService;
-        return this;
-    }
-
-    public Map<String, String> getBeachService() {
-        return beachService;
-    }
-
-    public ServicesDescriptions setBeachService(Map<String, String> beachService) {
-        this.beachService = beachService;
-        return this;
-    }
-
-    public Map<String, String> getRoomService() {
-        return roomService;
-    }
-
-    public ServicesDescriptions setRoomService(Map<String, String> roomService) {
-        this.roomService = roomService;
-        return this;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        ServicesDescriptions that = (ServicesDescriptions) o;
-        return Objects.equals(mainService, that.mainService) &&
-                Objects.equals(childService, that.childService) &&
-                Objects.equals(sportService, that.sportService) &&
-                Objects.equals(beachService, that.beachService) &&
-                Objects.equals(roomService, that.roomService);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(mainService, childService, sportService, beachService, roomService);
-    }
-
-    @Override
-    public String toString() {
-        return "ServicesDescriptions{" +
-                "mainService=" + mainService +
-                ", childService=" + childService +
-                ", sportService=" + sportService +
-                ", beachService=" + beachService +
-                ", roomService=" + roomService +
-                '}';
-    }
 }
