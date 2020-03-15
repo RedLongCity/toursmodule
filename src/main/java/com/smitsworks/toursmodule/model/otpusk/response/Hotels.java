@@ -1,10 +1,7 @@
-package com.smitsworks.toursmodule.model.otpusk;
+package com.smitsworks.toursmodule.model.otpusk.response;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import java.time.LocalTime;
 import java.util.List;
@@ -14,10 +11,8 @@ import java.util.List;
  * https://otpusk.api.domain/tours/hotels?countryId=115&cityId=953,955,956&with=price&access_token=ACCESS_TOK
  * EN
  */
-@Getter
-@Setter
 @EqualsAndHashCode
-@ToString
+@Data
 public class Hotels {
 
     /**
@@ -27,16 +22,15 @@ public class Hotels {
      */
 
     @JsonIgnore
+    @EqualsAndHashCode.Exclude
     private LocalTime expired = LocalTime.now();
 
     private String api_version;
     private double time;
     private List<HotelsBean> hotels;
 
-    @Getter
-    @Setter
+    @Data
     @EqualsAndHashCode
-    @ToString
     public static class HotelsBean {
         /**
          * id : 39631

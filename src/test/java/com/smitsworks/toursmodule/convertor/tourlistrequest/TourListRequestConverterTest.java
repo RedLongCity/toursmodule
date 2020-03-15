@@ -12,7 +12,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Optional;
 
-public class TourListRequestConvertorTest {
+public class TourListRequestConverterTest {
 
     private TourRequest testTourRequest;
     private final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yy");
@@ -48,7 +48,7 @@ public class TourListRequestConvertorTest {
                 "&date_till=03.02.17" +
                 "&page=1" +
                 "&hotel_info=1";
-        Optional<URI> optional = new TourListRequestConvertor().getRequestConvertedToPath(testTourRequest);
+        Optional<URI> optional = new TourListRequestConverter().getRequestConvertedToPath(testTourRequest);
         Assert.assertTrue(optional.isPresent());
         Assert.assertEquals(optional.get().toURL().toString(), testData);
     }

@@ -1,10 +1,7 @@
-package com.smitsworks.toursmodule.model.otpusk;
+package com.smitsworks.toursmodule.model.otpusk.response;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 import org.springframework.data.annotation.Id;
 
 import java.util.List;
@@ -13,10 +10,8 @@ import java.util.List;
  * tours/cities - список курортов по стране
  * https://otpusk.api.domain/tours/cities?countryId=115&with=price&access_token=ACCESS_TOKEN
  */
-@Getter
-@Setter
+@Data
 @EqualsAndHashCode
-@ToString
 public class Cities {
 
     /**
@@ -33,10 +28,8 @@ public class Cities {
     private double time;
     private List<CitiesBean> cities;
 
-    @Getter
-    @Setter
+    @Data
     @EqualsAndHashCode
-    @ToString
     public static class CitiesBean {
         /**
          * id : 1038

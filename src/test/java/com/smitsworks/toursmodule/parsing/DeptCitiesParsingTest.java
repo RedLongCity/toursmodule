@@ -4,7 +4,7 @@ package com.smitsworks.toursmodule.parsing;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.smitsworks.toursmodule.model.otpusk.DeptCities;
+import com.smitsworks.toursmodule.model.otpusk.response.DeptCities;
 import com.smitsworks.toursmodule.utils.JsonUtils;
 import org.junit.Assert;
 import org.junit.Before;

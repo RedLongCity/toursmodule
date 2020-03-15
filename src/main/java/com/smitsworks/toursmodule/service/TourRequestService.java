@@ -1,6 +1,8 @@
 package com.smitsworks.toursmodule.service;
 
 import com.smitsworks.toursmodule.model.TourRequest;
+import com.smitsworks.toursmodule.model.otpusk.request.CountriesRequest;
+import com.smitsworks.toursmodule.model.otpusk.response.Countries;
 import com.smitsworks.toursmodule.repository.TourRequestRepository;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

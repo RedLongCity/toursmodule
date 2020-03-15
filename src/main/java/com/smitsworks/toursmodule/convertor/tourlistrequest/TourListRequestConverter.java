@@ -10,7 +10,7 @@ import org.apache.logging.log4j.Logger;
 import java.net.URI;
 import java.util.Optional;
 
-public class TourListRequestConvertor extends RequestPathBuilder implements RequestConvertor<TourRequest> {
+public class TourListRequestConverter extends RequestPathBuilder implements RequestConvertor<TourRequest> {
 
     private static final Logger logger = LogManager.getLogger(ControllerUtils.class);
 

@@ -1,10 +1,7 @@
-package com.smitsworks.toursmodule.model.otpusk;
+package com.smitsworks.toursmodule.model.otpusk.response;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import java.time.LocalTime;
 import java.util.Map;
@@ -13,23 +10,20 @@ import java.util.Map;
  * tours/operators - список операторов
  * https://otpusk.api.domain/tours/operators?countryId=115&regionId=1&access_token=ACCESS_TOKEN
  */
-@Getter
-@Setter
 @EqualsAndHashCode
-@ToString
+@Data
 public class Operators {
 
     @JsonIgnore
+    @EqualsAndHashCode.Exclude
     private LocalTime expired = LocalTime.now();
 
     private Map<String, OperatorBean> operators;
     private String api_version;
     private double time;
 
-    @Getter
-    @Setter
     @EqualsAndHashCode
-    @ToString
+    @Data
     public static class OperatorBean {
         /**
          * id : 3019

@@ -1,10 +1,7 @@
-package com.smitsworks.toursmodule.model.otpusk;
+package com.smitsworks.toursmodule.model.otpusk.response;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import java.time.LocalTime;
 import java.util.List;
@@ -13,10 +10,8 @@ import java.util.List;
  * tours/deptCities - список городов вылета
  * https://otpusk.api.domain/tours/deptCities?geoId=55&access_token=ACCESS_TOKEN
  */
-@Getter
-@Setter
 @EqualsAndHashCode
-@ToString
+@Data
 public class DeptCities {
 
     /**
@@ -26,16 +21,15 @@ public class DeptCities {
      */
 
     @JsonIgnore
+    @EqualsAndHashCode.Exclude
     private LocalTime expired = LocalTime.now();
 
     private String api_version;
     private double time;
     private List<DeptCitiesBean> deptCities;
 
-    @Getter
-    @Setter
     @EqualsAndHashCode
-    @ToString
+    @Data
     public static class DeptCitiesBean {
         /**
          * id : 1925

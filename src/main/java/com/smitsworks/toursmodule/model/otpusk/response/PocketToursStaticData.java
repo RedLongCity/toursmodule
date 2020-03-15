@@ -1,4 +1,4 @@
-package com.smitsworks.toursmodule.model.otpusk;
+package com.smitsworks.toursmodule.model.otpusk.response;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.EqualsAndHashCode;
