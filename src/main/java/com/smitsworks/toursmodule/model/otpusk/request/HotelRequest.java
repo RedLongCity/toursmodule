@@ -6,12 +6,11 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @Builder
-public class DatesRequest {
+public class HotelRequest {
 
-    private int to;
-    private int regionId;
+    private int hotelId;
 
 }

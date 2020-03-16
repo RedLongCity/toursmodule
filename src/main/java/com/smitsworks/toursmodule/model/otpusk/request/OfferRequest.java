@@ -9,9 +9,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class DatesRequest {
+public class OfferRequest {
 
-    private int to;
-    private int regionId;
+    private int hotelId;
 
 }

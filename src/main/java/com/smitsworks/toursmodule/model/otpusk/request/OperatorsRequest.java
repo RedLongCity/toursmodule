@@ -1,26 +1,17 @@
 package com.smitsworks.toursmodule.model.otpusk.request;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Getter
-@Setter
-@ToString
-public class OperatorsRequest extends AbstractRequest {
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+public class OperatorsRequest {
 
     private int countryId;
     private int regionId;
 
-    public OperatorsRequest(String prefix, String accessToken) {
-        super(prefix, accessToken);
-    }
-
-    @Builder
-    public OperatorsRequest(String prefix, String accessToken, int countryId, int regionId) {
-        super(prefix, accessToken);
-        this.countryId = countryId;
-        this.regionId = regionId;
-    }
 }
