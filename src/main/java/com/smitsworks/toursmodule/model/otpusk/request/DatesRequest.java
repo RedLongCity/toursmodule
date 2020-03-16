@@ -1,26 +1,27 @@
 package com.smitsworks.toursmodule.model.otpusk.request;
 
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.*;
+import org.springframework.data.annotation.Id;
 
-@Getter
-@Setter
-@ToString
-public class DatesRequest extends AbstractRequest {
+import java.time.LocalDateTime;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+@EqualsAndHashCode
+public class DatesRequest {
+
+    @Id
+    @EqualsAndHashCode.Exclude
+    private Integer id;
+
+    @JsonIgnore
+    @EqualsAndHashCode.Exclude
+    private LocalDateTime expired;
 
     private int to;
     private int regionId;
 
-    public DatesRequest(String prefix, String accessToken) {
-        super(prefix, accessToken);
-    }
-
-    @Builder
-    public DatesRequest(String prefix, String accessToken, int to, int regionId) {
-        super(prefix, accessToken);
-        this.to = to;
-        this.regionId = regionId;
-    }
 }

@@ -10,8 +10,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@EqualsAndHashCode
-public class DeptCitiesRequest {
+public class OfferRequest {
 
     @Id
     @EqualsAndHashCode.Exclude
@@ -21,6 +20,6 @@ public class DeptCitiesRequest {
     @EqualsAndHashCode.Exclude
     private LocalDateTime expired;
 
-    private int geoId;
+    private int hotelId;
 
 }

@@ -7,11 +7,11 @@ import org.springframework.data.annotation.Id;
 import java.time.LocalDateTime;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @Builder
 @EqualsAndHashCode
-public class DeptCitiesRequest {
+public class HotelRequest {
 
     @Id
     @EqualsAndHashCode.Exclude
@@ -21,6 +21,6 @@ public class DeptCitiesRequest {
     @EqualsAndHashCode.Exclude
     private LocalDateTime expired;
 
-    private int geoId;
+    private int hotelId;
 
 }

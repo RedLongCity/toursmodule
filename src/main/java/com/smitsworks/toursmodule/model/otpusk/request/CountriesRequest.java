@@ -1,24 +1,24 @@
 package com.smitsworks.toursmodule.model.otpusk.request;
 
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.*;
 
-@Getter
-@Setter
-@ToString
-public class CountriesRequest extends AbstractRequest {
+import java.time.LocalDateTime;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+@EqualsAndHashCode
+public class CountriesRequest {
+
+    @EqualsAndHashCode.Exclude
+    private Integer id;
+
+    @EqualsAndHashCode.Exclude
+    @JsonIgnore
+    private LocalDateTime expired;
 
     private boolean withPrice;
 
-    public CountriesRequest(String prefix, String accessToken) {
-        super(prefix, accessToken);
-    }
-
-    @Builder
-    public CountriesRequest(String prefix, String accessToken, boolean withPrice) {
-        super(prefix, accessToken);
-        this.withPrice = withPrice;
-    }
 }

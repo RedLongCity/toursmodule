@@ -1,9 +1,27 @@
 package com.smitsworks.toursmodule.model.otpusk.request;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.*;
+import org.springframework.data.annotation.Id;
+
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
-public class SearchRequest extends AbstractRequest {
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+@EqualsAndHashCode
+public class SearchRequest {
+
+    @Id
+    @EqualsAndHashCode.Exclude
+    private Integer id;
+
+    @JsonIgnore
+    @EqualsAndHashCode.Exclude
+    private LocalDateTime expired;
 
     private int deptCity;
     private String to;
@@ -25,9 +43,16 @@ public class SearchRequest extends AbstractRequest {
     private String currency;
     private int number;
     private int page;
-
-
-    public SearchRequest(String prefix, String accessToken) {
-        super(prefix, accessToken);
-    }
+    private boolean show;
+    private boolean shorT;
+    private boolean returnNow;
+    private List<String> hotelsList;
+    private List<String> notHotelsList;
+    private List<String> toCitiesList;
+    private List<String> toOperators;
+    private String availableFlight;
+    private String stopSale;
+    private boolean noPromo;
+    private boolean offerId;
+    private boolean tsr;
 }

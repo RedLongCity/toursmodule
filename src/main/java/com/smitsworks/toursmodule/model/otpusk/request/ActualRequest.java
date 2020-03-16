@@ -6,11 +6,12 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
-public class SuggestsRequest {
+public class ActualRequest {
 
-    private String text;
+    private int offerId;
+    private String people;
 
 }
